@@ -87,19 +87,14 @@ class TddWorldTest {
 	@Test
 	public void testNull() {
 		TddWorld tdd = new TddWorld();
-		int[] input = {};
-		HashMap<String, ArrayList<Integer>> expectedOutput = tdd.evenOrOdd(input);
-		assertFalse(expectedOutput.isEmpty());
-	}
+		int[] input = null;
+		//HashMap<String, ArrayList<Integer>> expectedOutput = tdd.evenOrOdd(input);
+		assertThrows(NullPointerException.class, () -> tdd.evenOrOdd(input));
+		assertThrows(NullPointerException.class, ()-> tdd.evenOrOdd(input));
+		}
 	
-//	@Test
-//	public void testEvenOrOddWithNullArray() {
-//		TddWorld tdd = new TddWorld();
-//		int[] input = null;
-//		HashMap<String, ArrayList<Integer>> expectedOutput = tdd.evenOrOdd(input);
-//		assertTrue(expectedOutput.isEmpty());
-//	}
 	
+
 	@Test
 	public void testEven() {
 		int[] input = {2,6,4};
@@ -126,17 +121,33 @@ class TddWorldTest {
 		assertEquals(8, tdd.calculatePower(2, 3));
 	}
 	
+	@Test
+	public void testPowerNull() {
+		TddWorld tdd = new TddWorld();
+		Integer base=null;
+		Integer exponent=null;
+		assertThrows(NullPointerException.class, () -> tdd.calculatePower(base,exponent));
+		assertThrows(NullPointerException.class, ()-> tdd.calculatePower(base,exponent));
+		}
+	
 	
 	@Test
 	@DisplayName("Test Reverse String.. ")
-	public void testReverse() {
+	public void testReverse1() {
 		TddWorld tdd = new TddWorld();
 		assertEquals("olleh", tdd.reverse("hello"));
+	}
+	@Test
+	public void testReverse2() {
+		TddWorld tdd = new TddWorld();
 		assertEquals(null, tdd.reverse(null));
+	}
+	
+	@Test
+	public void testReverse3() {
+		TddWorld tdd = new TddWorld();
 		assertEquals("k", tdd.reverse("k"));
 		assertEquals("", tdd.reverse(""));
-
-
 
 	}
 }
