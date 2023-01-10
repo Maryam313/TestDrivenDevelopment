@@ -33,7 +33,6 @@ class TddWorldTest {
 		assertEquals(2, tdd.subtract(5, 3));
 		assertEquals(-2, tdd.subtract(3, 5));
 
-
 	}
 
 	@Test
@@ -49,8 +48,6 @@ class TddWorldTest {
 	@DisplayName("Sub two random int ")
 	void testRandomSubtract() {
 		TddWorld tdd = new TddWorld();
-		// fail("Not yet implemented");
-		// tdd.subtract(5, 3);
 		assertEquals(27, tdd.subtract(15, -12));
 
 	}
@@ -64,86 +61,90 @@ class TddWorldTest {
 		assertEquals(true, tdd.getData().containsKey("data"));
 
 	}
+
 	@Test
+	@DisplayName("Test odd and even num ")
 	public void testEvenOrOdd() {
-		int[] input = {2,3,7,6,9,4,5,7};
+		int[] input = { 2, 3, 7, 6, 9, 4, 5, 7 };
 		TddWorld tdd = new TddWorld();
 		HashMap<String, ArrayList<Integer>> expectedOutput = new HashMap<>();
 		expectedOutput.put("even:", new ArrayList<>(Arrays.asList(2, 6, 4)));
-		expectedOutput.put("odd:", new ArrayList<>(Arrays.asList(3,7,9,5,7)));
-		assertEquals(expectedOutput, tdd.evenOrOdd(input));	
-	}
-	
-	@Test
-	public void testOdd() {
-		int[] input = {3,7,9,5,7};
-		TddWorld tdd = new TddWorld();
-		HashMap<String, ArrayList<Integer>> expectedOutput = new HashMap<>();
-		expectedOutput.put("odd:", new ArrayList<>(Arrays.asList(3,7,9,5,7)));
-		expectedOutput.put("even:", new ArrayList<Integer>());
-		assertEquals(expectedOutput, tdd.evenOrOdd(input));	
-	}
-	
-	@Test
-	public void testNull() {
-		TddWorld tdd = new TddWorld();
-		int[] input = null;
-		//HashMap<String, ArrayList<Integer>> expectedOutput = tdd.evenOrOdd(input);
-		assertThrows(NullPointerException.class, () -> tdd.evenOrOdd(input));
-		assertThrows(NullPointerException.class, ()-> tdd.evenOrOdd(input));
-		}
-	
-	
-
-	@Test
-	public void testEven() {
-		int[] input = {2,6,4};
-		TddWorld tdd = new TddWorld();
-		HashMap<String, ArrayList<Integer>> expectedOutput = new HashMap<>();
-		expectedOutput.put("odd:", new ArrayList<Integer>());
-		expectedOutput.put("even:", new ArrayList<>(Arrays.asList(2,6,4)));
+		expectedOutput.put("odd:", new ArrayList<>(Arrays.asList(3, 7, 9, 5, 7)));
 		assertEquals(expectedOutput, tdd.evenOrOdd(input));
 	}
 
-	
 	@Test
-	public void testZeroPower() {
+	@DisplayName("Test odd num ")
+	public void testOdd() {
+		int[] input = { 3, 7, 9, 5, 7 };
+		TddWorld tdd = new TddWorld();
+		HashMap<String, ArrayList<Integer>> expectedOutput = new HashMap<>();
+		expectedOutput.put("odd:", new ArrayList<>(Arrays.asList(3, 7, 9, 5, 7)));
+		expectedOutput.put("even:", new ArrayList<Integer>());
+		assertEquals(expectedOutput, tdd.evenOrOdd(input));
+	}
 
+	@Test
+	@DisplayName("Test Null ")
+	public void testNull() {
+		TddWorld tdd = new TddWorld();
+		int[] input = null;
+		assertThrows(NullPointerException.class, () -> tdd.evenOrOdd(input));
+		assertThrows(NullPointerException.class, () -> tdd.evenOrOdd(input));
+	}
+
+	@Test
+	@DisplayName("Test even num ")
+	public void testEven() {
+		int[] input = { 2, 6, 4 };
+		TddWorld tdd = new TddWorld();
+		HashMap<String, ArrayList<Integer>> expectedOutput = new HashMap<>();
+		expectedOutput.put("odd:", new ArrayList<Integer>());
+		expectedOutput.put("even:", new ArrayList<>(Arrays.asList(2, 6, 4)));
+		assertEquals(expectedOutput, tdd.evenOrOdd(input));
+	}
+
+	@Test
+	@DisplayName("Test Zero power ")
+	public void testZeroPower() {
 		TddWorld tdd = new TddWorld();
 		assertEquals(0, tdd.calculatePower(0, 0));
 
 	}
-	
 
 	@Test
+	@DisplayName("Test power base:2 expo:3 ")
 	public void testIntPower() {
 		TddWorld tdd = new TddWorld();
 		assertEquals(8, tdd.calculatePower(2, 3));
 	}
-	
+
 	@Test
+	@DisplayName("Test Null power ")
 	public void testPowerNull() {
 		TddWorld tdd = new TddWorld();
-		Integer base=null;
-		Integer exponent=null;
-		assertThrows(NullPointerException.class, () -> tdd.calculatePower(base,exponent));
-		assertThrows(NullPointerException.class, ()-> tdd.calculatePower(base,exponent));
-		}
-	
-	
+		Integer base = null;
+		Integer exponent = null;
+		assertThrows(NullPointerException.class, () -> tdd.calculatePower(base, exponent));
+		assertThrows(NullPointerException.class, () -> tdd.calculatePower(base, exponent));
+	}
+
 	@Test
 	@DisplayName("Test Reverse String.. ")
 	public void testReverse1() {
 		TddWorld tdd = new TddWorld();
 		assertEquals("olleh", tdd.reverse("hello"));
 	}
+
 	@Test
+	@DisplayName("Test Null Reverse String.. ")
 	public void testReverse2() {
 		TddWorld tdd = new TddWorld();
 		assertEquals(null, tdd.reverse(null));
 	}
-	
+
 	@Test
+	@DisplayName("Test single character.. ")
 	public void testReverse3() {
 		TddWorld tdd = new TddWorld();
 		assertEquals("k", tdd.reverse("k"));
