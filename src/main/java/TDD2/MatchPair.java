@@ -7,7 +7,7 @@ import javax.sound.midi.VoiceStatus;
  * @author Done by Maryam..
  *
  *Implement a method that takes a string and tells if it contains 
- *the right amount of opening and closing parenthesis, braces and brackets.
+ *the right amount of opening and closing parenthesis, braces && brackets.
  *
  *
  */
