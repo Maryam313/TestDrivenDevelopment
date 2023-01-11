@@ -1,7 +1,6 @@
 package TDD2;
 
 import java.util.Stack;
-
 import javax.sound.midi.VoiceStatus;
 
 /**
@@ -13,8 +12,8 @@ public class MatchPair {
 	public static boolean BalancedExpression(String string) {
 		Stack<Character> stack = new Stack<Character>();
 		try {
-			for (int i = 0; i < string.length(); i++) {
-				char par = string.charAt(i);
+			for (int index = 0; index < string.length(); index++) {
+				char par = string.charAt(index);
 				if (par == '[' || par == '{' || par == '(') {
 					stack.push(par);
 				} else if (par == ']' || par == '}' || par == ')') {
