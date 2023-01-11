@@ -20,12 +20,12 @@ public class SplitMethod {
 	public static ArrayList<String> splitMethod(String str, Character delimiter) {
 		String chaString=" ";
 		ArrayList<String> char1 = new ArrayList<>();
-		for (int i = 0; i < str.length(); i++) {
-			if (str.charAt(i)== delimiter) {
+		for (int index = 0; index < str.length(); index++) {
+			if (str.charAt(index)== delimiter) {
 				char1.add(chaString);
 				chaString=" ";
 			} else {
-				chaString=chaString+str.charAt(i);
+				chaString=chaString+str.charAt(index);
 			}	
 		}
 		char1.add(chaString);

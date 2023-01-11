@@ -16,15 +16,15 @@ public class MatchPair {
 	public static boolean BalancedExpression(String string) {
 		Stack<Character> stack = new Stack<Character>();
 		try {
-			for (int i = 0; i < string.length(); i++) {
-				char par = string.charAt(i);
-				if (par == '[' || par == '{' || par == '(') {
-					stack.push(par);
-				} else if (par == ']' || par == '}' || par == ')') {
+			for (int index = 0; index < string.length(); index++) {
+				char pair = string.charAt(index);
+				if (pair == '[' || pair == '{' || pair == '(') {
+					stack.push(pair);
+				} else if (pair == ']' || pair == '}' || pair == ')') {
 					if (stack.empty()) {
 						return true;
 					}
-					switch (par) {
+					switch (pair) {
 					case ']':
 						if (stack.pop() != '[') {
 							return false;
