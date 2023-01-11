@@ -13,7 +13,7 @@ import javax.sound.midi.VoiceStatus;
  */
 
 public class MatchPair {
-	public static boolean BalancedExpression(String string) {
+	public  boolean BalancedExpression(String string) {
 		Stack<Character> stack = new Stack<Character>();
 		try {
 			for (int index = 0; index < string.length(); index++) {
@@ -51,7 +51,7 @@ public class MatchPair {
 				return true;
 			}
 		} catch (Exception e) {
-			throw new IllegalArgumentException("Invalid characters in expression");
+			throw new NullPointerException("Invalid characters in expression");
 		}
 	}
 

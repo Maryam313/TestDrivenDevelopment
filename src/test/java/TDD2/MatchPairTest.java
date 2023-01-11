@@ -28,12 +28,9 @@ class MatchPairTest {
 	@DisplayName("Can throw an exception.: ")
 	 void testBalancedExpression() {
 		MatchPair pair=new MatchPair();
-		try {
-			pair.BalancedExpression("[{(a+b)}]");
-			fail("Expected an IllegalArgumentException to be thrown");
-		} catch (IllegalArgumentException e) {
-			assertEquals("Invalid characters in expression", e.getMessage());
-		}
+		String str=null;
+		assertThrows(NullPointerException.class, () -> pair.BalancedExpression(str));
+ 
 	}
 
 
