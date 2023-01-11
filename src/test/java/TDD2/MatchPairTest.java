@@ -14,25 +14,26 @@ class MatchPairTest {
 	@DisplayName("Take an empty string :")
 	void test() {	
 		String str="";
-		MatchPair pair=new MatchPair();
-		assertEquals(true, pair.BalancedExpression(str));
+		MatchPair matchPair=new MatchPair();
+		assertEquals(true, matchPair.BalancedExpression(str));
 	}
 
 	@Test
 	@DisplayName("Take null: ")
 	void Null() {
-		MatchPair pair=new MatchPair();
+		MatchPair matchPair=new MatchPair();
 		String str=null;
-		assertThrows(NullPointerException.class, () -> pair.BalancedExpression(str));
+		assertThrows(NullPointerException.class, () -> 
+		matchPair.BalancedExpression(str));
 
 	}
 
 	@Test
 	@DisplayName("Can throw an exception.: ")
 	 void testBalancedExpression() {
-		MatchPair pair=new MatchPair();
+		MatchPair matchPair=new MatchPair();
 		try {
-			pair.BalancedExpression("[{(a+b)}]");
+			matchPair.BalancedExpression("[{(a+b)}]");
 			fail("Expected an IllegalArgumentException to be thrown");
 		} catch (IllegalArgumentException e) {
 			assertEquals("Invalid characters in expression", e.getMessage());
