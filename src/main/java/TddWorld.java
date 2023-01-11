@@ -35,7 +35,6 @@ public class TddWorld {
 
 	}
 
-	
 	public double calculatePower(int base, int exponent) {
 		HashMap<String, Integer> power = new HashMap<String, Integer>();
 		int result = base;
@@ -49,6 +48,7 @@ public class TddWorld {
 		return result;
 
 	}
+
 	public HashMap<String, ArrayList<Integer>> evenOrOdd(int[] arr) {
 		ArrayList<Integer> evenNum = new ArrayList<Integer>();
 		ArrayList<Integer> oddNum = new ArrayList<Integer>();
@@ -73,10 +73,9 @@ public class TddWorld {
 
 	}
 
-	
 	public String reverse(String input) {
-		if (input==null) {
-			return null;	
+		if (input == null) {
+			return null;
 		}
 		char[] chars = new char[input.length()];
 		for (int i = 0; i < input.length(); i++) {
@@ -84,4 +83,8 @@ public class TddWorld {
 		}
 		return new String(chars);
 	}
+	
+	
+	
+	
 }
