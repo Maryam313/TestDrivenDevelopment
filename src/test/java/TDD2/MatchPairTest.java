@@ -1,15 +1,12 @@
 package TDD2;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.ArrayList;
 import java.util.Stack;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class MatchPairTest {
-
 	@Test
 	@DisplayName("Take an empty string :")
 	void test() {	

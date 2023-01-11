@@ -1,18 +1,18 @@
-/**
- * 
- */
 package TDD2;
 
 import java.util.Stack;
-
 import javax.sound.midi.VoiceStatus;
 
 /**
  * @author Done by Maryam..
  *
+ *Implement a method that takes a string and tells if it contains 
+ *the right amount of opening and closing parenthesis, braces and brackets.
+ *
+ *
  */
-public class MatchPair {
 
+public class MatchPair {
 	public static boolean BalancedExpression(String string) {
 		Stack<Character> stack = new Stack<Character>();
 		try {

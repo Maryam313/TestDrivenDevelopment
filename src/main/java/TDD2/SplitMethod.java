@@ -1,13 +1,12 @@
-/**
- * 
- */
+
 package TDD2;
 
 import java.util.ArrayList;
 
 /**
- * @author LAP-2
- *
+ * Implement a method that takes a string and a delimiter character 
+ * as an argument and returns a reversed value as a string.
+ * 
  */
 public class SplitMethod {
 
